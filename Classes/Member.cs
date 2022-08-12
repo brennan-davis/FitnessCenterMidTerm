@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public abstract void CheckIn();
+        public abstract void CheckIn(Club club);
     }
 }
