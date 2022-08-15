@@ -6,7 +6,7 @@ namespace FitnessCenterMidTerm.Classes
         // Constructor
         public MultiClubMember(int id, string name)
         {
-            Id = id;
+            Id = int.Parse($"{id}9");
             Name = name;
             MemberCheckinPoints = 0;
         }
