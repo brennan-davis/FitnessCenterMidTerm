@@ -5,7 +5,7 @@ namespace FitnessCenterMidTerm.Classes
     {
         public SingleClubMember(int id, string name, Club clubMembership)
         {
-            Id = id;
+            Id = int.Parse($"{id}1");
             Name = name;
             ClubMembership = clubMembership;
         }

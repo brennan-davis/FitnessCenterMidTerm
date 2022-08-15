@@ -3,7 +3,7 @@ namespace FitnessCenterMidTerm.Classes
 {
     public class Club
     {
-        public Club(string name, string address, Club clubMembership)
+        public Club(string name, string address)
         {
             Name = name;
             Address = address;
