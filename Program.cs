@@ -1,2 +1,9 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using FitnessCenterMidTerm.Classes;
+List<Club> clubs = Admin.GetClubList();
+List<SingleClubMember> singleClubMembers = new List<SingleClubMember>()
+{
+    new SingleClubMember(2,"Lisa", clubs[0])
+};
+Console.WriteLine(singleClubMembers[0].ClubMembership.Name);
+
+
