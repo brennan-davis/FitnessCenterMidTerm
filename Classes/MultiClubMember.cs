@@ -3,17 +3,22 @@ namespace FitnessCenterMidTerm.Classes
 {
     public class MultiClubMember : Member
     {
-        public MultiClubMember()
+        // Constructor
+        public MultiClubMember(int id, string name)
         {
-            MemberCheckinPoints = 12;
+            Id = id;
+            Name = name;
+            MemberCheckinPoints = 0;
         }
-
+        
+        // Properties
         public int MemberCheckinPoints { get; set; }
 
+        // Methods
         public override void CheckIn(Club club)
         {
-            int TotalMembershipPoints = 0;
-            Console.WriteLine(TotalMembershipPoints += MemberCheckinPoints);
+            MemberCheckinPoints += 1;
+            Console.WriteLine(MemberCheckinPoints);
         }
     }
 }
