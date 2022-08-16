@@ -27,7 +27,7 @@ namespace FitnessCenterMidTerm.Classes
         public override string ToString()
         {
             string a = String.Format("{0,-10} {1, -10}", "ID:", $"{Id}");
-            string b = String.Format("\n{0,-10} {1, -10}", "Model:", $"{Name}");
+            string b = String.Format("\n{0,-10} {1, -10}", "Name:", $"{Name}");
             string c = String.Format("\n{0,-10} {1, -10}", "Club:", "All");
             string d = String.Format("\n{0,-10} {1, -10}", "Membership Points:", $"{MemberPoints}");
             return a + b + c + d;

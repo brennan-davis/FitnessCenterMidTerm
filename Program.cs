@@ -9,11 +9,12 @@ Console.WriteLine(singleClubMembers[0].ClubMembership.Name);
 
 singleClubMembers.ForEach(member => member.CheckIn(clubs[1]));
 
-List<MultiClubMember> MultiClubMember = new List<MultiClubMember>()
+List<MultiClubMember> multiClubMembers = new List<MultiClubMember>()
 {
     new MultiClubMember(4,"Brennan"),
     new MultiClubMember(5, "Morgan")
 };
 Console.WriteLine(singleClubMembers[0].ClubMembership.Name);
 
-singleClubMembers.ForEach(member => member.CheckIn(clubs[1]));
+multiClubMembers.ForEach(member => Console.WriteLine(member.ToString()));
+
