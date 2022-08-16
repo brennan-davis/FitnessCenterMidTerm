@@ -18,3 +18,6 @@ Console.WriteLine(singleClubMembers[0].ClubMembership.Name);
 
 multiClubMembers.ForEach(member => Console.WriteLine(member.ToString()));
 
+Admin.AddMultiMember(multiClubMembers, new MultiClubMember(6, "Joe"));
+
+multiClubMembers.ForEach(member => Console.WriteLine(member.ToString()));

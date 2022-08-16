@@ -19,11 +19,10 @@ namespace FitnessCenterMidTerm.Classes
             return clubList;
         }
 
-
-
-   
-
-
+        public static void AddMultiMember(List<MultiClubMember> members, MultiClubMember member)
+        {
+            members.Add(member);
+        }
     }
 }
 
