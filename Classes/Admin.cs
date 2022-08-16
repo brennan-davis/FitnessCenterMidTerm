@@ -8,6 +8,7 @@ namespace FitnessCenterMidTerm.Classes
 {
     public static class Admin
     {
+        //methods
         public static List<Club> GetClubList()
         {
             List<Club> clubList = new List<Club>();
@@ -17,6 +18,11 @@ namespace FitnessCenterMidTerm.Classes
             clubList.Add(new Club("Colorado Springs","1 Olympic Plz - Colorado Springs, CO"));
             return clubList;
         }
+
+
+
+   
+
 
     }
 }
