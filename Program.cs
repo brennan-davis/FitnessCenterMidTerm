@@ -6,4 +6,4 @@ List<SingleClubMember> singleClubMembers = new List<SingleClubMember>()
 };
 Console.WriteLine(singleClubMembers[0].ClubMembership.Name);
 
-
+singleClubMembers.ForEach(member => member.CheckIn(clubs[1]));

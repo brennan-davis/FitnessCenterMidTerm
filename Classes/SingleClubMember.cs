@@ -19,7 +19,7 @@ namespace FitnessCenterMidTerm.Classes
 
             else
             {
-                throw new Exception("You are currently not a member of this club. Would you like to join ?");
+                Console.WriteLine(new Exception("You are currently not a member of this club. Would you like to join?").Message);
             }
         }
 
