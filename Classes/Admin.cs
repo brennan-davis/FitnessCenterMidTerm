@@ -9,6 +9,8 @@ namespace FitnessCenterMidTerm.Classes
     public static class Admin
     {
         //methods
+
+        //Method to Display Clubs
         public static List<Club> GetClubList()
         {
             List<Club> clubList = new List<Club>();
@@ -19,10 +21,30 @@ namespace FitnessCenterMidTerm.Classes
             return clubList;
         }
 
+        //Method to add multi-club members
         public static void AddMultiMember(List<MultiClubMember> members, MultiClubMember member)
         {
             members.Add(member);
         }
+
+        //Method to add single club members
+        public static void AddSingleMember(List<SingleClubMember> members, SingleClubMember member)
+        {
+            members.Add(member);
+        }
+
+        //Method to remove members multi-club members
+        public static void RemoveMultiMember(List<MultiClubMember> members, MultiClubMember member)
+        {
+            members.Remove(member);
+        }
+
+        //Method to remove members single club members
+        public static void RemoveSingleMember(List<SingleClubMember> members, SingleClubMember member)
+        {
+            members.Remove(member);
+        }
+
     }
 }
 

@@ -21,3 +21,12 @@ multiClubMembers.ForEach(member => Console.WriteLine(member.ToString()));
 Admin.AddMultiMember(multiClubMembers, new MultiClubMember(6, "Joe"));
 
 multiClubMembers.ForEach(member => Console.WriteLine(member.ToString()));
+
+MultiClubMember John = new MultiClubMember(6, "John");
+Admin.AddMultiMember(multiClubMembers, John);
+
+multiClubMembers.ForEach(member => Console.WriteLine(member.ToString()));
+
+Admin.RemoveSingleMember(singleClubMembers, singleClubMembers[0]);
+
+singleClubMembers.ForEach(member => Console.WriteLine(member.ToString()));
