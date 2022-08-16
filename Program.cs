@@ -27,6 +27,6 @@ Admin.AddMultiMember(multiClubMembers, John);
 
 multiClubMembers.ForEach(member => Console.WriteLine(member.ToString()));
 
-Admin.RemoveSingleMember(singleClubMembers, singleClubMembers[0]);
+Admin.RemoveSingleMember(singleClubMembers, 2);
 
 singleClubMembers.ForEach(member => Console.WriteLine(member.ToString()));

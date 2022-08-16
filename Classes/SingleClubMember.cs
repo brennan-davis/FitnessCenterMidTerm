@@ -28,7 +28,7 @@ namespace FitnessCenterMidTerm.Classes
             string a = String.Format("{0,-10} {1, -10}", "ID:", $"{Id}");
             string b = String.Format("\n{0,-10} {1, -10}", "Name:", $"{Name}");
             string c = String.Format("\n{0,-10} {1, -10}", "Club:", $"{ClubMembership.Name}");
-            return a + b + c;
+            return a + b + c + "\n";
         }
 
         // Property

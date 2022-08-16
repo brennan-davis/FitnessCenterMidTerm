@@ -34,15 +34,15 @@ namespace FitnessCenterMidTerm.Classes
         }
 
         //Method to remove members multi-club members
-        public static void RemoveMultiMember(List<MultiClubMember> members, MultiClubMember member)
+        public static void RemoveMultiMember(List<MultiClubMember> members, int input)
         {
-            members.Remove(member);
+            members.RemoveAt(input - 1);
         }
 
         //Method to remove members single club members
-        public static void RemoveSingleMember(List<SingleClubMember> members, SingleClubMember member)
+        public static void RemoveSingleMember(List<SingleClubMember> members, int input)
         {
-            members.Remove(member);
+            members.RemoveAt(input - 1);
         }
 
     }

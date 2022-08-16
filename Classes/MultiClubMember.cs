@@ -9,6 +9,7 @@ namespace FitnessCenterMidTerm.Classes
             Id = int.Parse($"{id}9");
             Name = name;
             MemberPoints = 0;
+            Fees = 24.99m;
         }
         
         // Properties
@@ -30,7 +31,7 @@ namespace FitnessCenterMidTerm.Classes
             string b = String.Format("\n{0,-10} {1, -10}", "Name:", $"{Name}");
             string c = String.Format("\n{0,-10} {1, -10}", "Club:", "All");
             string d = String.Format("\n{0,-10} {1, -10}", "Membership Points:", $"{MemberPoints}");
-            return a + b + c + d;
+            return a + b + c + d + "\n";
         }
     }
 }
