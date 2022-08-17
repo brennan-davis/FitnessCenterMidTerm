@@ -14,23 +14,33 @@ namespace FitnessCenterMidTerm.Classes
         public static List<Club> GetClubList()
         {
             List<Club> clubList = new List<Club>();
-            clubList.Add(new Club("Houston","4614 Nasa Pkwy - Houston, TX"));
-            clubList.Add(new Club("Boston","2225 Newbury St - Boston, MA"));
-            clubList.Add(new Club("Chattanooga","2 Broad St - Chattanooga, TN"));
-            clubList.Add(new Club("Colorado Springs","1 Olympic Plz - Colorado Springs, CO"));
+            clubList.Add(new Club("Houston: ","4614 Nasa Pkwy - Houston, TX"));
+            clubList.Add(new Club("Boston: ","2225 Newbury St - Boston, MA"));
+            clubList.Add(new Club("Chattanooga: ","2 Broad St - Chattanooga, TN"));
+            clubList.Add(new Club("Colorado Springs: ","1 Olympic Plz - Colorado Springs, CO"));
             return clubList;
         }
 
         //Method to add multi-club members
-        public static void AddMultiMember(List<MultiClubMember> members, MultiClubMember member)
+        public static void AddMultiMember(List<MultiClubMember> members)
         {
-            members.Add(member);
+            Console.Write("What ID number should be assigned? ");
+            int Id = int.Parse(Console.ReadLine());
+            Console.WriteLine("Please enter your name?");
+            string name = Console.ReadLine();
+            members.Add(new MultiClubMember(Id, name));
         }
 
         //Method to add single club members
-        public static void AddSingleMember(List<SingleClubMember> members, SingleClubMember member)
+        public static void AddSingleMember(List<SingleClubMember> members, List<Club> clubs1)
         {
-            members.Add(member);
+            Console.Write("What location would you like to join? ");
+            int location = int.Parse(Console.ReadLine());
+            Console.Write("What ID number should be assigned? ");
+            int Id = int.Parse(Console.ReadLine());
+            Console.Write("Please enter your name? ");
+            string name = Console.ReadLine();
+            members.Add(new SingleClubMember(Id, name, clubs1[location - 1]));
         }
 
         //Method to remove members multi-club members
