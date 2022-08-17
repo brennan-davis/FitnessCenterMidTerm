@@ -29,4 +29,9 @@ multiClubMembers.ForEach(member => Console.WriteLine(member.ToString()));
 
 Admin.RemoveSingleMember(singleClubMembers, 2);
 
-singleClubMembers.ForEach(member => Console.WriteLine(member.ToString()));
+singleClubMembers.ForEach(member => member.GenerateBill());
+
+multiClubMembers.ForEach(member => member.GenerateBill());
+
+
+

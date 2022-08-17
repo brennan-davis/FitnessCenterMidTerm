@@ -8,6 +8,7 @@ namespace FitnessCenterMidTerm.Classes
             Id = int.Parse($"{id}1");
             Name = name;
             ClubMembership = clubMembership;
+            Fees = 9.99m;
         }
         public override void CheckIn(Club club)
         {
@@ -31,8 +32,15 @@ namespace FitnessCenterMidTerm.Classes
             return a + b + c + "\n";
         }
 
+        public override void GenerateBill()
+        {
+            Console.WriteLine($"Push It Fitness\n{ClubMembership.Name}\nHello {Name}!\nTotal Bill Due: {Fees.ToString("C")}");
+        }
+
         // Property
         public Club ClubMembership { get; set; }
+
+
     }
 }
 

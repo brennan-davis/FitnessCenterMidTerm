@@ -7,5 +7,7 @@
         public decimal Fees { get; set; }
 
         public abstract void CheckIn(Club club);
+        public abstract void GenerateBill();
+
     }
 }

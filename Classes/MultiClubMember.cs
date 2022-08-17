@@ -24,6 +24,13 @@ namespace FitnessCenterMidTerm.Classes
             Console.WriteLine(MemberPoints);
         }
 
+        public override void GenerateBill()
+        {
+            Console.WriteLine($"Push It Fitness\nPremium Member\nHello {Name}!" +
+                $"\nTotal Bill Due: {Fees.ToString("C")}\nMember Points:{MemberPoints}");
+        }
+    
+
         //Method to display member info
         public override string ToString()
         {
