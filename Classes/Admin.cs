@@ -46,7 +46,7 @@ namespace FitnessCenterMidTerm.Classes
         public static void AddSingleMember(List<SingleClubMember> members, List<Club> clubs1)
         {
             Console.WriteLine();
-            Console.Write("What location would you like to join? ");
+            Console.Write("What location would you like to join (1-4)? ");
             int location = int.Parse(Console.ReadLine());
             Console.Write("What ID number should be assigned? ");
             int Id = int.Parse(Console.ReadLine());
@@ -63,9 +63,9 @@ namespace FitnessCenterMidTerm.Classes
         {
             Console.WriteLine("Sorry to see you go.");
             Console.WriteLine("What is your name?");
-            string usersName = Console.ReadLine();
-            int singleMembersIndex = singleMembers.FindIndex(member => member.Name == usersName);
-            int multiMembersIndex = multiMembers.FindIndex(member => member.Name == usersName);
+            string usersName = Console.ReadLine().ToLower();
+            int singleMembersIndex = singleMembers.FindIndex(member => member.Name.ToLower() == usersName);
+            int multiMembersIndex = multiMembers.FindIndex(member => member.Name.ToLower() == usersName);
             if (singleMembersIndex != -1)
             {
                 singleMembers.RemoveAt(singleMembersIndex);
@@ -75,6 +75,28 @@ namespace FitnessCenterMidTerm.Classes
             {
                 multiMembers.RemoveAt(multiMembersIndex);
                 Console.WriteLine($"{usersName} has canceled their Premium membership.");
+            }
+            else
+                Console.WriteLine("Member not found!");
+        }
+
+        public static void PayBill(List<MultiClubMember>multiMembers, List<SingleClubMember> singleMembers)
+        {
+            Console.WriteLine("Ok! You're looking to pay your bill.");
+            Console.WriteLine("What is your name?");
+            string usersName = Console.ReadLine().ToLower();
+            int singleMembersIndex = singleMembers.FindIndex(member => member.Name.ToLower() == usersName);
+            int multiMembersIndex = multiMembers.FindIndex(member => member.Name.ToLower() == usersName);
+            Console.WriteLine("\nHere is the amount due:");
+
+            if (singleMembersIndex != -1)
+            {
+                singleMembers[singleMembersIndex].GenerateBill();
+            }
+            else if (multiMembersIndex != -1)
+            {
+                multiMembers[multiMembersIndex].GenerateBill();
+
             }
             else
                 Console.WriteLine("Member not found!");

@@ -56,10 +56,10 @@ while (continueProgram)
         case ConsoleKey.NumPad2:
             Console.Clear();
             Console.WriteLine("Checking in! What is your name?");
-            var usersName = Console.ReadLine();
+            var usersName = Console.ReadLine().ToLower();
             Console.WriteLine();
-            List<SingleClubMember> filteredSingleMembers = singleClubMembers.Where(x => x.Name.Equals(usersName)).ToList();
-            List<MultiClubMember> filteredMultiMembers = multiClubMembers.Where(x => x.Name.Equals(usersName)).ToList();
+            List<SingleClubMember> filteredSingleMembers = singleClubMembers.Where(x => x.Name.ToLower().Equals(usersName)).ToList();
+            List<MultiClubMember> filteredMultiMembers = multiClubMembers.Where(x => x.Name.ToLower().Equals(usersName)).ToList();
             Admin.PrintClubList(clubs);
             Console.Write("\nWhich club would you like to check into? ");
             int clubLocation = int.Parse(Console.ReadLine());
@@ -86,7 +86,13 @@ while (continueProgram)
             break;
         case ConsoleKey.D4:
         case ConsoleKey.NumPad4:
+            Console.Clear();
+            Admin.PayBill(multiClubMembers, singleClubMembers);
             Console.WriteLine("");
+            Console.WriteLine("\nWould you like to return to the main menu? (Press Y)");
+            if (Console.ReadKey().Key != ConsoleKey.Y)
+                continueProgram = false;
+            Console.Clear();
             break;
         case ConsoleKey.D0:
         case ConsoleKey.NumPad0:
