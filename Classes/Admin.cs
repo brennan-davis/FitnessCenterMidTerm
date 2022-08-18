@@ -24,6 +24,7 @@ namespace FitnessCenterMidTerm.Classes
         public static void PrintClubList(List<Club> clubs)
         {
             int count = 0;
+            Console.WriteLine("Here are our locations:");
             clubs.ForEach(club => Console.WriteLine($"({++count}) {club.Name} - {club.Address}"));
         }
 
