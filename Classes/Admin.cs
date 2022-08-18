@@ -14,27 +14,37 @@ namespace FitnessCenterMidTerm.Classes
         public static List<Club> GetClubList()
         {
             List<Club> clubList = new List<Club>();
-            clubList.Add(new Club("Houston: ","4614 Nasa Pkwy - Houston, TX"));
-            clubList.Add(new Club("Boston: ","2225 Newbury St - Boston, MA"));
-            clubList.Add(new Club("Chattanooga: ","2 Broad St - Chattanooga, TN"));
-            clubList.Add(new Club("Colorado Springs: ","1 Olympic Plz - Colorado Springs, CO"));
+            clubList.Add(new Club("Houston","4614 Nasa Pkwy - Houston, TX"));
+            clubList.Add(new Club("Boston","2225 Newbury St - Boston, MA"));
+            clubList.Add(new Club("Chattanooga","2 Broad St - Chattanooga, TN"));
+            clubList.Add(new Club("Colorado Springs","1 Olympic Plz - Colorado Springs, CO"));
             return clubList;
+        }
+
+        public static void PrintClubList(List<Club> clubs)
+        {
+            int count = 0;
+            clubs.ForEach(club => Console.WriteLine($"({++count}) {club.Name} - {club.Address}"));
         }
 
         //Method to add multi-club members
         public static void AddMultiMember(List<MultiClubMember> members)
         {
+            Console.WriteLine();
             Console.Write("What ID number should be assigned? ");
             int Id = int.Parse(Console.ReadLine());
-            Console.WriteLine("Please enter your name?");
+            Console.Write("Please enter your name? ");
             string name = Console.ReadLine();
             members.Add(new MultiClubMember(Id, name));
+            Console.WriteLine();
+            Console.WriteLine($"Congrats, {name}! You're ready to start your fitness journey!\nHere is your bill due today:");
             members[members.Count - 1].GenerateBill();
         }
 
         //Method to add single club members
         public static void AddSingleMember(List<SingleClubMember> members, List<Club> clubs1)
         {
+            Console.WriteLine();
             Console.Write("What location would you like to join? ");
             int location = int.Parse(Console.ReadLine());
             Console.Write("What ID number should be assigned? ");
@@ -42,6 +52,8 @@ namespace FitnessCenterMidTerm.Classes
             Console.Write("Please enter your name? ");
             string name = Console.ReadLine();
             members.Add(new SingleClubMember(Id, name, clubs1[location - 1]));
+            Console.WriteLine();
+            Console.WriteLine($"Congrats, {name}! You're ready to start your fitness journey!\nHere is your bill due today:");
             members[members.Count - 1].GenerateBill();
         }
 

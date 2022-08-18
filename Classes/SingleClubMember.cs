@@ -34,7 +34,7 @@ namespace FitnessCenterMidTerm.Classes
 
         public override void GenerateBill()
         {
-            Console.WriteLine($"Push It Fitness\n{ClubMembership.Name}\nHello {Name}!\nTotal Bill Due: {Fees.ToString("C")}");
+            Console.WriteLine($"\nPush It Fitness\nClub Membership: {ClubMembership.Name}\nTotal Bill Due: {Fees.ToString("C")}");
         }
 
         // Property

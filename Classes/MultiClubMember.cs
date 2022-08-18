@@ -26,7 +26,7 @@ namespace FitnessCenterMidTerm.Classes
 
         public override void GenerateBill()
         {
-            Console.WriteLine($"Push It Fitness\nPremium Member\nHello {Name}!" +
+            Console.WriteLine($"\nPush It Fitness\nPremium Member" +
                 $"\nTotal Bill Due: {Fees.ToString("C")}\nMember Points:{MemberPoints}");
         }
     
