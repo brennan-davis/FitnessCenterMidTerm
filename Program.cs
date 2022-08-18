@@ -55,7 +55,10 @@ while (continueProgram)
 
         case ConsoleKey.D2:
         case ConsoleKey.NumPad2:
-            Console.WriteLine("");
+            Console.WriteLine("Checking in! What is your name?");
+            var usersName = Console.ReadLine;
+         
+            singleClubMembers.Where(x => x.Name.Equals(usersName)) 
             break;
         case ConsoleKey.D3:
         case ConsoleKey.NumPad3:
