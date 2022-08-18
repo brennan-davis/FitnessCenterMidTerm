@@ -29,7 +29,22 @@ while (continueProgram)
             clubs.ForEach(club => Console.WriteLine($"{club.Name} - {club.Address}"));
             Console.WriteLine();
             Console.WriteLine("Would you like to: \n (1) Join a single club\n (2) Sign-up with our premium membership to have access to all locations");
-            
+            switch (Console.ReadKey().Key)
+            {
+                case ConsoleKey.D1:
+                case ConsoleKey.NumPad1:
+                    Admin.AddSingleMember(singleClubMembers, clubs);
+                    break;
+                case ConsoleKey.D2:
+                case ConsoleKey.NumPad2:
+                    Admin.AddMultiMember(multiClubMembers);
+                    break;
+                default:
+                    Console.WriteLine("You've chosen not to join. Goodbye.");
+                    break;
+            }
+
+
             Console.ReadLine();
             break;
         case ConsoleKey.D2:

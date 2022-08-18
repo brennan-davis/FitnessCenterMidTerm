@@ -29,6 +29,7 @@ namespace FitnessCenterMidTerm.Classes
             Console.WriteLine("Please enter your name?");
             string name = Console.ReadLine();
             members.Add(new MultiClubMember(Id, name));
+            members[members.Count - 1].GenerateBill();
         }
 
         //Method to add single club members
@@ -41,6 +42,7 @@ namespace FitnessCenterMidTerm.Classes
             Console.Write("Please enter your name? ");
             string name = Console.ReadLine();
             members.Add(new SingleClubMember(Id, name, clubs1[location - 1]));
+            members[members.Count - 1].GenerateBill();
         }
 
         //Method to remove members multi-club members
