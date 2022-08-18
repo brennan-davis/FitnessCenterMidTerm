@@ -76,7 +76,13 @@ while (continueProgram)
 
         case ConsoleKey.D3:
         case ConsoleKey.NumPad3:
-            Console.WriteLine("");
+            Console.Clear();
+            Admin.RemoveMember(multiClubMembers, singleClubMembers);
+            Console.WriteLine("\nWould you like to return to the main menu? (Press Y)");
+            if (Console.ReadKey().Key != ConsoleKey.Y)
+                continueProgram = false;
+            Console.Clear();
+
             break;
         case ConsoleKey.D4:
         case ConsoleKey.NumPad4:

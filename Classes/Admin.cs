@@ -59,15 +59,25 @@ namespace FitnessCenterMidTerm.Classes
         }
 
         //Method to remove members multi-club members
-        public static void RemoveMultiMember(List<MultiClubMember> members, int input)
+        public static void RemoveMember(List<MultiClubMember> multiMembers, List<SingleClubMember> singleMembers)
         {
-            members.RemoveAt(input - 1);
-        }
-
-        //Method to remove members single club members
-        public static void RemoveSingleMember(List<SingleClubMember> members, int input)
-        {
-            members.RemoveAt(input - 1);
+            Console.WriteLine("Sorry to see you go.");
+            Console.WriteLine("What is your name?");
+            string usersName = Console.ReadLine();
+            int singleMembersIndex = singleMembers.FindIndex(member => member.Name == usersName);
+            int multiMembersIndex = multiMembers.FindIndex(member => member.Name == usersName);
+            if (singleMembersIndex != -1)
+            {
+                singleMembers.RemoveAt(singleMembersIndex);
+                Console.WriteLine($"{usersName} has canceled their membership.");
+            }
+            else if (multiMembersIndex != -1)
+            {
+                multiMembers.RemoveAt(multiMembersIndex);
+                Console.WriteLine($"{usersName} has canceled their Premium membership.");
+            }
+            else
+                Console.WriteLine("Member not found!");
         }
 
     }
