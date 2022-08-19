@@ -4,11 +4,11 @@ namespace FitnessCenterMidTerm.Classes
     public class MultiClubMember : Member
     {
         // Constructor
-        public MultiClubMember(int id, string name)
+        public MultiClubMember(int id, string name, int memberPoints)
         {
-            Id = int.Parse($"{id}9");
+            Id = id;
             Name = name;
-            MemberPoints = 0;
+            MemberPoints = memberPoints;
             Fees = 24.99m;
         }
         
@@ -27,11 +27,11 @@ namespace FitnessCenterMidTerm.Classes
         public override void GenerateBill()
         {
             Console.WriteLine($"\nPush It Fitness\nPremium Member" +
-                $"\nTotal Bill Due: {Fees.ToString("C")}\nMember Points:{MemberPoints}");
+                $"\nTotal Bill Due: {Fees.ToString("C")}\nMember Points: {MemberPoints}");
         }
         public override void DisplayMember()
         {
-            Console.WriteLine($"\nPush It Fitness\nMembership ID: {Id}\nMember Name: {Name}\nClub Membership: All locations!\n");
+            Console.WriteLine($"\nPush It Fitness\nMembership ID: {Id}\nMember Name: {Name}\nMembership Points Earned: {MemberPoints}\nClub Membership: All locations!\n");
             Admin.PrintClubList(Admin.Clubs);
         }
 

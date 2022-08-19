@@ -2,17 +2,9 @@
 using System.Runtime.CompilerServices;
 
 List<Club> clubs = Admin.GetClubList();
-List<SingleClubMember> singleClubMembers = new List<SingleClubMember>()
-{
-    new SingleClubMember(2,"Lisa", clubs[0]),
-    new SingleClubMember(3, "Tolu", clubs[1])
-};
+List<SingleClubMember> singleClubMembers = Admin.GetSingleClubMembers();
 
-List<MultiClubMember> multiClubMembers = new List<MultiClubMember>()
-{
-    new MultiClubMember(4,"Brennan"),
-    new MultiClubMember(5, "Morgan")
-};
+List<MultiClubMember> multiClubMembers = Admin.GetMultiClubMembers();
 
 bool continueProgram = true;
 
@@ -35,17 +27,19 @@ while (continueProgram)
                 case ConsoleKey.D1:
                 case ConsoleKey.NumPad1:
                     Admin.AddSingleMember(singleClubMembers, clubs);
+                    Admin.WriteSingleClubMembers(singleClubMembers);
                     break;
                 case ConsoleKey.D2:
                 case ConsoleKey.NumPad2:
                     Admin.AddMultiMember(multiClubMembers);
+                    Admin.WriteMultiClubMembers(multiClubMembers);
                     break;
                 default:
                     Console.WriteLine("You've chosen not to join. Goodbye.");
                     break;
             }
             Console.WriteLine("\nWould you like to return to the main menu? (Press Y)");
-            if(Console.ReadKey().Key != ConsoleKey.Y)
+            if (Console.ReadKey().Key != ConsoleKey.Y)
                 continueProgram = false;
             Console.Clear();
             break;
@@ -67,6 +61,7 @@ while (continueProgram)
                 filteredSingleMembers[0].CheckIn(clubs[clubLocation - 1]);
             else if (filteredMultiMembers.Count == 1)
                 filteredMultiMembers[0].CheckIn(clubs[clubLocation - 1]);
+                Admin.WriteMultiClubMembers(multiClubMembers);
             Console.WriteLine("\nWould you like to return to the main menu? (Press Y)");
             if (Console.ReadKey().Key != ConsoleKey.Y)
                 continueProgram = false;
@@ -114,12 +109,8 @@ while (continueProgram)
             break;
 
     }
-
-    Console.Clear();
-    Console.WriteLine("Thank you for visiting Push It Fitness! We look forward to seeing you soon!");
-    Thread.Sleep(3000);
 }
 
-
-
-    
+Console.Clear();
+Console.WriteLine("Thank you for visiting Push It Fitness! We look forward to seeing you soon!");
+Thread.Sleep(3000);
