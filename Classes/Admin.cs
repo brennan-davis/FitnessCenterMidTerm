@@ -9,7 +9,7 @@ namespace FitnessCenterMidTerm.Classes
     public static class Admin
     {
         //methods
-
+        public static List<Club> Clubs = GetClubList();
         //Method to Display Clubs
         public static List<Club> GetClubList()
         {
@@ -101,6 +101,28 @@ namespace FitnessCenterMidTerm.Classes
             else
                 Console.WriteLine("Member not found!");
         }
+
+        public static void GetMemberInfo(List<MultiClubMember> multiMembers, List<SingleClubMember> singleMembers)
+        {
+            Console.WriteLine("What is your name?");
+            string usersName = Console.ReadLine().ToLower();
+            int singleMembersIndex = singleMembers.FindIndex(member => member.Name.ToLower() == usersName);
+            int multiMembersIndex = multiMembers.FindIndex(member => member.Name.ToLower() == usersName);
+            Console.WriteLine("\nHere is what we found - is this you?:");
+
+            if (singleMembersIndex != -1)
+            {
+                singleMembers[singleMembersIndex].DisplayMember();
+            }
+            else if (multiMembersIndex != -1)
+            {
+                multiMembers[multiMembersIndex].DisplayMember();
+
+            }
+            else
+                Console.WriteLine("Member not found!");
+        }
+
 
     }
 }

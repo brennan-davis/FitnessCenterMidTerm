@@ -8,6 +8,7 @@
 
         public abstract void CheckIn(Club club);
         public abstract void GenerateBill();
+        public abstract void DisplayMember();
 
     }
 }

@@ -37,6 +37,11 @@ namespace FitnessCenterMidTerm.Classes
             Console.WriteLine($"\nPush It Fitness\nClub Membership: {ClubMembership.Name}\nTotal Bill Due: {Fees.ToString("C")}");
         }
 
+        public override void DisplayMember()
+        {
+            Console.WriteLine($"\nPush It Fitness\nMembership ID: {Id}\nMember Name: {Name}\nClub Membership: {ClubMembership.Name}\nClub Address: {ClubMembership.Address}\n");
+        }
+
         // Property
         public Club ClubMembership { get; set; }
 

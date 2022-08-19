@@ -29,7 +29,12 @@ namespace FitnessCenterMidTerm.Classes
             Console.WriteLine($"\nPush It Fitness\nPremium Member" +
                 $"\nTotal Bill Due: {Fees.ToString("C")}\nMember Points:{MemberPoints}");
         }
-    
+        public override void DisplayMember()
+        {
+            Console.WriteLine($"\nPush It Fitness\nMembership ID: {Id}\nMember Name: {Name}\nClub Membership: All locations!\n");
+            Admin.PrintClubList(Admin.Clubs);
+        }
+
 
         //Method to display member info
         public override string ToString()
