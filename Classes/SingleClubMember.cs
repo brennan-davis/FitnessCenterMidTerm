@@ -3,17 +3,17 @@ namespace FitnessCenterMidTerm.Classes
 {
     public class SingleClubMember : Member
     {
-        public SingleClubMember(int id, string name, Club clubMembership)
+        public SingleClubMember(int id, string name, string nameOfClub)
         {
-            Id = int.Parse($"{id}1");
+            Id = id;
             Name = name;
-            ClubMembership = clubMembership;
+            NameOfClub = nameOfClub;
             Fees = 9.99m;
         }
         public override void CheckIn(Club club)
         {
 
-            if (ClubMembership == club)
+            if (NameOfClub == club.Name)
             {
                 Console.WriteLine($"Welcome {Name}");
             }
@@ -28,22 +28,22 @@ namespace FitnessCenterMidTerm.Classes
         {
             string a = String.Format("{0,-10} {1, -10}", "ID:", $"{Id}");
             string b = String.Format("\n{0,-10} {1, -10}", "Name:", $"{Name}");
-            string c = String.Format("\n{0,-10} {1, -10}", "Club:", $"{ClubMembership.Name}");
+            string c = String.Format("\n{0,-10} {1, -10}", "Club:", $"{NameOfClub}");
             return a + b + c + "\n";
         }
 
         public override void GenerateBill()
         {
-            Console.WriteLine($"\nPush It Fitness\nClub Membership: {ClubMembership.Name}\nTotal Bill Due: {Fees.ToString("C")}");
+            Console.WriteLine($"\nPush It Fitness\nClub Membership: {NameOfClub}\nTotal Bill Due: {Fees.ToString("C")}");
         }
 
         public override void DisplayMember()
         {
-            Console.WriteLine($"\nPush It Fitness\nMembership ID: {Id}\nMember Name: {Name}\nClub Membership: {ClubMembership.Name}\nClub Address: {ClubMembership.Address}\n");
+            Console.WriteLine($"\nPush It Fitness\nMembership ID: {Id}\nMember Name: {Name}\nClub Membership: {NameOfClub}\nClub Address: {Admin.Clubs[Admin.GetClubIndex(NameOfClub)].Address}\n");
         }
 
         // Property
-        public Club ClubMembership { get; set; }
+        public string NameOfClub { get; set; }
 
 
     }
