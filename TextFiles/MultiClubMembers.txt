@@ -1,4 +1,6 @@
 3,Brennan,5
-4,Morgan,12
 12,Aaron,0
 78,Jason,1
+345,Fred,1
+876,john,0
+876,morgan,1

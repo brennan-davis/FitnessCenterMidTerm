@@ -15,7 +15,8 @@ namespace FitnessCenterMidTerm.Classes
 
             if (NameOfClub == club.Name)
             {
-                Console.WriteLine($"Welcome {Name}");
+                Console.Clear();
+                Console.WriteLine($"Welcome {Name}! You're ready to PUSH IT!");
             }
 
             else

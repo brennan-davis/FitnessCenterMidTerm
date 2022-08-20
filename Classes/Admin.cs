@@ -103,13 +103,13 @@ namespace FitnessCenterMidTerm.Classes
         //Method to add multi-club members
         public static void AddMultiMember(List<MultiClubMember> members)
         {
-            Console.WriteLine();
+            Console.Clear();
             Console.Write("What ID number should be assigned? ");
             int Id = int.Parse(Console.ReadLine());
             Console.Write("Please enter your name? ");
             string name = Console.ReadLine();
             members.Add(new MultiClubMember(Id, name, 0));
-            Console.WriteLine();
+            Console.Clear();
             Console.WriteLine($"Congrats, {name}! You're ready to start your fitness journey!\nHere is your bill due today:");
             members[members.Count - 1].GenerateBill();
         }
@@ -120,12 +120,13 @@ namespace FitnessCenterMidTerm.Classes
             Console.WriteLine();
             Console.Write("What location would you like to join (1-4)? ");
             int location = int.Parse(Console.ReadLine());
+            Console.Clear();
             Console.Write("What ID number should be assigned? ");
             int Id = int.Parse(Console.ReadLine());
             Console.Write("Please enter your name? ");
             string name = Console.ReadLine();
             members.Add(new SingleClubMember(Id, name, clubs1[location - 1].Name));
-            Console.WriteLine();
+            Console.Clear();
             Console.WriteLine($"Congrats, {name}! You're ready to start your fitness journey!\nHere is your bill due today:");
             members[members.Count - 1].GenerateBill();
         }
@@ -140,14 +141,16 @@ namespace FitnessCenterMidTerm.Classes
             int multiMembersIndex = multiMembers.FindIndex(member => member.Name.ToLower() == usersName);
             if (singleMembersIndex != -1)
             {
+                Console.Clear();
                 singleMembers.RemoveAt(singleMembersIndex);
                 Console.WriteLine($"{usersName} has canceled their membership.");
                 WriteSingleClubMembers(singleMembers);
             }
             else if (multiMembersIndex != -1)
             {
+                Console.Clear();
                 multiMembers.RemoveAt(multiMembersIndex);
-                Console.WriteLine($"{usersName} has canceled their Premium membership.");
+                Console.WriteLine($"{usersName} has canceled their premium membership.");
                 WriteMultiClubMembers(multiMembers);
             }
             else
@@ -161,7 +164,7 @@ namespace FitnessCenterMidTerm.Classes
             string usersName = Console.ReadLine().ToLower();
             int singleMembersIndex = singleMembers.FindIndex(member => member.Name.ToLower() == usersName);
             int multiMembersIndex = multiMembers.FindIndex(member => member.Name.ToLower() == usersName);
-            Console.WriteLine("\nHere is the amount due:");
+            Console.WriteLine("\nHere's what we found:");
 
             if (singleMembersIndex != -1)
             {

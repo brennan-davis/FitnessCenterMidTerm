@@ -21,6 +21,7 @@ namespace FitnessCenterMidTerm.Classes
         public override void CheckIn(Club club)
         {
             MemberPoints += 1;
+            Console.Clear();
             Console.WriteLine($"\nWelcome, {Name}! You're ready to PUSH IT!\nMembership Points Earned: {MemberPoints}");
         }
 

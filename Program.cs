@@ -11,7 +11,7 @@ bool continueProgram = true;
 Console.WriteLine("Hello! Welcome to Push It Fitness!\n");
 while (continueProgram)
 {
-    Console.WriteLine("Would you like to: \n(1) Join a club\n(2) Check in\n(3) Cancel membership\n(4) Pay your bill\n(5) Display your membership information \n(0) to exit");
+    Console.WriteLine("Would you like to: \n(1) Join a club\n(2) Check in\n(3) Cancel membership\n(4) Pay your bill\n(5) Display your membership information \n(0) To exit");
 
     switch (Console.ReadKey().Key)
     {
@@ -62,7 +62,8 @@ while (continueProgram)
             else if (filteredMultiMembers.Count == 1)
                 filteredMultiMembers[0].CheckIn(clubs[clubLocation - 1]);
                 Admin.WriteMultiClubMembers(multiClubMembers);
-            Console.WriteLine("\nWould you like to return to the main menu? (Press Y)");
+            Console.WriteLine("\nReturn to main menu and select option (1) to join.");
+            Console.WriteLine("Would you like to return to the main menu? (Press Y)");
             if (Console.ReadKey().Key != ConsoleKey.Y)
                 continueProgram = false;
             Console.Clear();
@@ -83,7 +84,6 @@ while (continueProgram)
         case ConsoleKey.NumPad4:
             Console.Clear();
             Admin.PayBill(multiClubMembers, singleClubMembers);
-            Console.WriteLine("");
             Console.WriteLine("\nWould you like to return to the main menu? (Press Y)");
             if (Console.ReadKey().Key != ConsoleKey.Y)
                 continueProgram = false;
@@ -93,8 +93,7 @@ while (continueProgram)
         case ConsoleKey.NumPad5:
             Console.Clear();
             Admin.GetMemberInfo(multiClubMembers, singleClubMembers);
-            Console.WriteLine("");
-            Console.WriteLine("\nWould you like to return to the main menu? (Press Y)");
+            Console.WriteLine("Would you like to return to the main menu? (Press Y)");
             if (Console.ReadKey().Key != ConsoleKey.Y)
                 continueProgram = false;
             Console.Clear();
