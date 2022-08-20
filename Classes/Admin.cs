@@ -110,7 +110,8 @@ namespace FitnessCenterMidTerm.Classes
             string name = Console.ReadLine();
             members.Add(new MultiClubMember(Id, name, 0));
             Console.Clear();
-            Console.WriteLine($"Congrats, {name}! You're ready to start your fitness journey!\nHere is your bill due today:");
+            ShowSimplePercentage();
+            Console.WriteLine($"\nCongrats, {name}! You're ready to start your fitness journey!\nHere is your bill due today:");
             members[members.Count - 1].GenerateBill();
         }
 
@@ -127,7 +128,8 @@ namespace FitnessCenterMidTerm.Classes
             string name = Console.ReadLine();
             members.Add(new SingleClubMember(Id, name, clubs1[location - 1].Name));
             Console.Clear();
-            Console.WriteLine($"Congrats, {name}! You're ready to start your fitness journey!\nHere is your bill due today:");
+            ShowSimplePercentage();
+            Console.WriteLine($"\nCongrats, {name}! You're ready to start your fitness journey!\nHere is your bill due today:");
             members[members.Count - 1].GenerateBill();
         }
 
@@ -204,6 +206,17 @@ namespace FitnessCenterMidTerm.Classes
         {
             int clubIndex = Clubs.FindIndex(club => club.Name.ToLower() == clubName.ToLower());
             return clubIndex;
+        }
+
+        static void ShowSimplePercentage()
+        {
+            for (int i = 0; i <= 100; i++)
+            {
+                Console.Write($"\rProgress: {i}%   ");
+                Thread.Sleep(25);
+            }
+
+            Console.Write("\rDone!          ");
         }
     }
 }
