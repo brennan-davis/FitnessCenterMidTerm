@@ -182,7 +182,7 @@ namespace FitnessCenterMidTerm.Classes
             string usersName = Console.ReadLine().ToLower();
             int singleMembersIndex = singleMembers.FindIndex(member => member.Name.ToLower() == usersName);
             int multiMembersIndex = multiMembers.FindIndex(member => member.Name.ToLower() == usersName);
-            Console.WriteLine("\nHere is what we found - is this you?:");
+            Console.WriteLine("\nHere is what we found:");
 
             if (singleMembersIndex != -1)
             {
