@@ -62,7 +62,6 @@ while (continueProgram)
             else if (filteredMultiMembers.Count == 1)
                 filteredMultiMembers[0].CheckIn(clubs[clubLocation - 1]);
                 Admin.WriteMultiClubMembers(multiClubMembers);
-            Console.WriteLine("\nReturn to main menu and select option (1) to join.");
             Console.WriteLine("Would you like to return to the main menu? (Press Y)");
             if (Console.ReadKey().Key != ConsoleKey.Y)
                 continueProgram = false;
